@@ -1,0 +1,21 @@
+-- Create database
+CREATE DATABASE IF NOT EXISTS simple_tasks;
+
+-- Use database
+USE simple_tasks;
+
+-- Create table
+CREATE TABLE IF NOT EXISTS tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    task_name VARCHAR(200) NOT NULL,
+    details TEXT,
+    status VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Add sample data
+INSERT INTO tasks (task_name, details, status) VALUES
+('First Task', 'This is a test task', 'To Do');
+
+-- Verify
+SELECT * FROM tasks;
